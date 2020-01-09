@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Void Updater
+Comment=Updates notification
+Exec=/usr/local/bin/void-scripts/void-updater.sh
+Icon=system-software-update
+Terminal=false
+Categories=System;

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<separator label="VOID LINUX"/>
+		<item icon="/usr/share/icons/Papirus-Light/24x24/panel/start-here.svg" label="Exécuter...">
+			<action name="Execute">
+				<execute>xfce4-appfinder --collapsed</execute>
+			</action>
+		</item>
+		<separator/>
+		<item icon="/usr/share/icons/Papirus/32x32/apps/terminal.svg" label="Terminal">
+			<action name="Execute">
+				<execute>xfce4-terminal</execute>
+			</action>
+		</item>
+		<item icon="/usr/share/icons/Papirus/32x32/apps/system-file-manager.svg" label="Fichiers">
+			<action name="Execute">
+				<execute>thunar</execute>
+			</action>
+		</item>
+		<item icon="/usr/share/icons/Papirus/32x32/apps/browser.svg" label="Navigateur">
+			<action name="Execute">
+				<execute>firefox</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/applications-accessories.svg" id="utilities-menu" label="Accessoires">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/xfce-terminal.svg" label="Terminal">
+				<action name="Execute">
+					<execute>xfce4-terminal</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/thunar.svg" label="Thunar">
+				<action name="Execute">
+					<execute>thunar</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/mousepad.svg" label="Mousepad">
+				<action name="Execute">
+					<execute>mousepad</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/galculator.svg" label="Galculator">
+				<action name="Execute">
+					<execute>galculator</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/xfce4-notes-plugin.svg" label="Notes">
+				<action name="Execute">
+					<execute>mousepad ~/.conkytodo</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/applets-screenshooter.svg" label="Capture d'écran">
+				<action name="Execute">
+					<execute>xfce4-screenshooter</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/devices/scanner.svg" label="Scanner">
+				<action name="Execute">
+					<execute>simple-scan</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/xarchiver.svg" label="Xarchiver">
+				<action name="Execute">
+					<execute>xarchiver</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/utilities-system-monitor.svg" label="Gestionnaire de tâches">
+				<action name="Execute">
+					<execute>xfce4-taskmanager</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/android-file-transfer.svg" label="Transfert Android">
+				<action name="Execute">
+					<execute>android-file-transfer</execute>
+				</action>
+			</item>
+			<separator/>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/xfce4-appfinder.svg" label="Appfinder">
+				<action name="Execute">
+					<execute>xfce4-appfinder</execute>
+				</action>
+			</item>
+		</menu>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/knemo.svg" id="internet-menu" label="Internet">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/firefox.svg" label="Firefox">
+				<action name="Execute">
+					<execute>firefox</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/thunderbird.svg" label="Thunderbird">
+				<action name="Execute">
+					<execute>thunderbird</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/filezilla.svg" label="Filezilla">
+				<action name="Execute">
+					<execute>filezilla</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/transmission-gtk.svg" label="Transmission">
+				<action name="Execute">
+					<execute>transmission-gtk</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/hexchat.svg" label="HexChat">
+				<action name="Execute">
+					<execute>hexchat --existing %U</execute>
+				</action>
+			</item>
+		</menu>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/applications-office.svg" id="office-menu" label="Bureautique">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/orage.svg" label="Agenda">
+				<action name="Execute">
+					<execute>orage %F</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/libreoffice-writer.svg" label="LibreOffice Writer">
+				<action name="Execute">
+					<execute>libreoffice --writer</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/libreoffice-calc.svg" label="LibreOffice Calc">
+				<action name="Execute">
+					<execute>libreoffice --calc</execute>
+				</action>
+			</item>
+		</menu>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/applications-multimedia.svg" id="media-menu" label="Multimédia">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/parole.svg" label="Parole">
+				<action name="Execute">
+					<execute>parole</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/audacity.svg" label="Audacity">
+				<action name="Execute">
+					<execute>audacity</execute>
+				</action>
+			</item>
+		</menu>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/kipi-logo.svg" id="graphics-menu" label="Graphisme">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/gimp.svg" label="Gimp">
+				<action name="Execute">
+					<execute>gimp</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/inkscape.svg" label="Inkscape">
+				<action name="Execute">
+					<execute>inkscape</execute>
+				</action>
+			</item>
+		</menu>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/applications-games.svg" id="games-menu" label="Jeux">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/steam.svg" label="Steam">
+				<action name="Execute">
+					<execute>steam</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/minecraft.svg" label="Minecraft">
+				<action name="Execute">
+					<execute>minecraft</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/yast.svg" id="settings-menu" label="Paramètres">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/nitrogen.svg" label="Image d'arrière-plan">
+				<action name="Execute">
+					<execute>nitrogen</execute>
+				</action>
+			</item>
+			<menu icon="/usr/share/icons/Papirus/32x32/apps/conky-manager.svg" id="themes-menu-conky" label="Moniteur système Conky">
+				<item label="Texte clair">
+					<action name="Execute">
+						<execute>sed -i &quot;s/2e2c2a/d9d5d1/g&quot; ~/.conkyobrc</execute>
+					</action>
+				</item>
+				<item label="Texte sombre">
+					<action name="Execute">
+						<execute>sed -i &quot;s/d9d5d1/2e2c2a/g&quot; ~/.conkyobrc</execute>
+					</action>
+				</item>
+				<separator/>
+				<item label="Activer / Désactiver">
+					<action name="Execute">
+						<execute>/usr/local/bin/void-scripts/openbox-menu/conky.sh</execute>
+					</action>
+				</item>
+			</menu>
+			<separator/>
+			<menu icon="/usr/share/icons/Papirus/32x32/apps/com.github.spheras.desktopfolder.svg" id="environment-menu" label="Environnement">
+				<item icon="/usr/share/icons/Papirus/32x32/apps/applications-interfacedesign.svg" label="Apparence GTK">
+					<action name="Execute">
+						<execute>xfce4-appearance-settings</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/obconf.svg" label="Openbox (graphique)">
+					<action name="Execute">
+						<execute>obconf</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/obconf.svg" label="Openbox (texte)">
+					<action name="Execute">
+						<execute>mousepad ~/.config/openbox/rc.xml</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/menu-editor.svg" label="Menu Openbox (graphique)">
+					<action name="Execute">
+						<execute>obmenu</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/menu-editor.svg" label="Menu Openbox (texte)">
+					<action name="Execute">
+						<execute>mousepad ~/.config/openbox/menu.xml</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/xfce4-taskbar.svg" label="Créateur de thèmes Tint2">
+					<action name="Execute">
+						<execute>tint2conf</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/conky-manager.svg" label="Fichier de configuration Conky">
+					<action name="Execute">
+						<execute>mousepad ~/.conkyobrc</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/compton.svg" label="Règles du compositeur Compton">
+					<action name="Execute">
+						<execute>mousepad ~/.config/compton.conf</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/xfce4-notifyd.svg" label="Notifications">
+					<action name="Execute">
+						<execute>xfce4-notifyd-config</execute>
+					</action>
+				</item>
+			</menu>
+			<menu icon="/usr/share/icons/Papirus/32x32/devices/network-card.svg" id="hardware-menu" label="Matériel">
+				<item icon="/usr/share/icons/Papirus/32x32/apps/pavucontrol.svg" label="Contrôleur audio">
+					<action name="Execute">
+						<execute>pavucontrol</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/preferences-desktop-display.svg" label="Affichage">
+					<action name="Execute">
+						<execute>xfce4-display-settings</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/preferences-desktop-keyboard.svg" label="Clavier">
+					<action name="Execute">
+						<execute>xfce4-keyboard-settings</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/preferences-desktop-mouse.svg" label="Souris et Touchpad">
+					<action name="Execute">
+						<execute>xfce4-mouse-settings</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/apps/system-config-printer.svg" label="Imprimantes">
+					<action name="Execute">
+						<execute>system-config-printer</execute>
+					</action>
+				</item>
+			</menu>
+			<menu icon="/usr/share/icons/Papirus/32x32/apps/ignuit.svg" id="filesettings-menu" label="Gestion des fichiers">
+				<item icon="/usr/share/icons/Papirus/32x32/apps/thunar.svg" label="Configuration de Thunar">
+					<action name="Execute">
+						<execute>thunar-settings</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/devices/drive-removable-media.svg" label="Disques et médias amovibles">
+					<action name="Execute">
+						<execute>thunar-volman-settings</execute>
+					</action>
+				</item>
+				<item icon="/usr/share/icons/Papirus/32x32/mimetypes/application-x-executable.svg" label="Editeur de type MIME">
+					<action name="Execute">
+						<execute>xfce4-mime-settings</execute>
+					</action>
+				</item>
+			</menu>
+			<separator/>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/compton.svg" label="Permuter le compositeur">
+				<action name="Execute">
+					<execute>/usr/local/bin/void-scripts/openbox-menu/compton.sh</execute>
+				</action>
+			</item>
+			<separator/>
+			<item icon="/usr/share/icons/Papirus/24x24/apps/preferences-ubuntu-panel.svg" label="Afficher / Masquer les icônes du menu">
+				<action name="Execute">
+					<execute>/usr/local/bin/void-scripts/openbox-menu/menuicons.sh</execute>
+				</action>
+			</item>
+			<separator/>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/session-properties.svg" label="Applications au démarrage">
+				<action name="Execute">
+					<execute>mousepad  ~/.config/openbox/autostart</execute>
+				</action>
+			</item>
+		</menu>
+		<menu icon="/usr/share/icons/Papirus/32x32/apps/utilities-tweak-tool.svg" id="sysprefs-menu" label="Système">
+			<item icon="/usr/share/icons/Papirus/32x32/apps/void-wizard.svg" label="Void Wizard">
+				<action name="Execute">
+					<execute>xfce4-terminal -x '/usr/local/bin/void-scripts/void-wizard.sh'</execute>
+				</action>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/update-manager.svg" label="Mises à jour">
+				<action name="Execute">
+					<execute>/usr/local/bin/void-scripts/void-updater.sh</execute>
+				</action>
+			</item>
+			<separator/>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/gufw.svg" label="Pare-feu">
+				<action name="Execute">
+					<execute>gufw</execute>
+				</action>
+			</item>
+			<separator/>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/hardinfo.svg" label="Diagnostic">
+				<action name="Execute">
+					<execute>hardinfo</execute>
+				</action>
+			</item>
+			<separator/>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/sqlitebrowser.svg" label="Reconfigurer Openbox">
+				<action name="Reconfigure"/>
+			</item>
+			<item icon="/usr/share/icons/Papirus/32x32/apps/sqldeveloper.svg" label="Relancer Openbox">
+				<action name="Restart"/>
+			</item>
+		</menu>
+		<separator/>
+		<item icon="/usr/share/icons/Papirus-Light/24x24/panel/nm-vpn-standalone-lock.svg" label="Verrouiller">
+			<action name="Execute">
+				<execute>/usr/local/bin/void-scripts/lock.sh</execute>
+			</action>
+		</item>
+		<separator/>
+		<item icon="/usr/share/icons/Papirus-Light/24x24/actions/application-exit.svg" label="Déconnecter">
+			<action name="Exit">
+				<execute>openbox --exit</execute>
+			</action>
+		</item>
+		<item icon="/usr/share/icons/Papirus-Light/24x24/panel/system-restart-panel.svg" label="Redémarrer">
+			<action name="Execute">
+				<execute>dbus-send --system --print-reply --dest=&quot;org.freedesktop.ConsoleKit&quot; /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart</execute>
+			</action>
+		</item>
+		<item icon="/usr/share/icons/Papirus-Light/24x24/panel/system-shutdown-panel.svg" label="Arrêter">
+			<action name="Execute">
+				<execute>dbus-send --system --print-reply --dest=&quot;org.freedesktop.ConsoleKit&quot; /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop</execute>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

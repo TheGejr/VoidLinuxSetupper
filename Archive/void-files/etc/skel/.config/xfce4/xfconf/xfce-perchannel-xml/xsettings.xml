@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xsettings" version="1.0">
+  <property name="Net" type="empty">
+    <property name="ThemeName" type="string" value="Plata-Compact"/>
+    <property name="IconThemeName" type="string" value="Papirus"/>
+  </property>
+  <property name="Xft" type="empty">
+    <property name="DPI" type="int" value="92"/>
+    <property name="Antialias" type="int" value="1"/>
+    <property name="Hinting" type="int" value="1"/>
+    <property name="HintStyle" type="string" value="hintslight"/>
+    <property name="RGBA" type="string" value="rgb"/>
+  </property>
+  <property name="Gtk" type="empty">
+    <property name="FontName" type="string" value="Ubuntu 11"/>
+    <property name="MonospaceFontName" type="string" value="Ubuntu Mono 13"/>
+    <property name="MenuImages" type="bool" value="true"/>
+    <property name="ButtonImages" type="bool" value="false"/>
+    <property name="CursorThemeName" type="string" value="Vanilla-DMZ"/>
+    <property name="DecorationLayout" type="string" value="close,minimize,maximize:menu"/>
+  </property>
+</channel>

@@ -1,0 +1,11 @@
+xfsettingsd &
+thunar --daemon &
+nitrogen --restore &
+/usr/libexec/xfce-polkit &
+(sleep 1s && tint2) &
+(sleep 2s && volumeicon) &
+(sleep 3s && compton -b) &
+(sleep 4s && /usr/lib/xfce4/notifyd/xfce4-notifyd) &
+(sleep 5s && conky -qc ~/.conkyobrc) &
+#(sleep 6s && xfce4-clipman) &
+#(sleep 7s && redshift-gtk) &

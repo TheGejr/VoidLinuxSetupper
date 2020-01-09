@@ -1,0 +1,32 @@
+[user]
+	email = 
+	name = 
+	signingkey =
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  program = gpg2
+
+[color]
+    diff = auto
+    status = auto
+    ui = auto
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
+
+[alias]
+    pm= "!git push -u origin master"
+    c = commit -m
+    co = checkout
+    a = add -A
+    st = status
+    pu = push
+
+[push]
+    default = simple

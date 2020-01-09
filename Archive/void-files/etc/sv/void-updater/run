@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if pgrep -x xfce4-session > /dev/null
+  then
+  export DISPLAY=:0
+  export XAUTHORITY="/home/gejr/.Xauthority"
+  exec snooze -w0 -H/6 -t /home/gejr/.snooze/updater \
+    chpst -u gejr:gejr /usr/local/bin/void-scripts/void-updater.sh
+else
+  sleep 5m
+  sv reload void-updater
+fi

@@ -1,0 +1,8 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+LANG=en_US.UTF-8
+#SAL_USE_VCLPLUGIN=gtk3

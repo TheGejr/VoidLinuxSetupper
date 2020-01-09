@@ -1,0 +1,8 @@
+[Info]
+Name=Void Theme
+Description=Void flavoured Balou splash theme.
+
+[Splash Screen]
+bgcolor=#000000
+fgcolor=#696969
+logo=void-logo
