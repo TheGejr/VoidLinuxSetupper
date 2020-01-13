@@ -24,12 +24,48 @@ sleep 3s
 clear
 echo "Installing packages..."
 sleep 3s
-	sudo xbps-install -Sy adwaita-icon-theme alsa-plugins alsa-plugins-32bit alsa-plugins-ffmpeg alsa-plugins-pulseaudio alsa-utils audacity bash-completion conky cpufrequtils cpupower dbus-elogind elogind epdfview exo ffmpeg filezilla firefox font-hack-ttf fontconfig fontconfig-32bit freetype galculator-gtk3 garcon gimp git gmic-gimp gnome-themes-extra google-fonts-ttf greybird-themes gst-libav gst-plugins-bad1 gst-plugins-base1 gst-plugins-good1 gst-plugins-ugly1 gtk-update-icon-cache gtk3-nocsd gvfs gvfs-mtp gzip hardinfo pidgin htop hunspell lame libGL-32bit libavcodec libavcodec-32bit libavformat-32bit libavresample-32bit libavutil-32bit libpulseaudio-32bit libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice libtxc_dxtn-32bit linux-firmware-amd lynx make cmake menulibre mesa-ati-dri mesa-ati-dri-32bit mugshot nano vim neovim neofetch pfetch noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf ntfs-3g ntp numlockx optipng parole pavucontrol physlock procps-ng pulseaudio redshift-gtk rkhunter scrot simple-scan snooze thunar-archive-plugin thunar-volman thunderbird transmission-gtk tty-clock udisks2 ufw unrar unzip upower vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit wmctrl x264 xarchiver xcalib xcursor-vanilla-dmz xcursor-vanilla-dmz-aa xdg-user-dirs-gtk xdg-utils xdotool xf86-input-wacom xf86-video-amdgpu xfce-polkit xfce4 xfce4-battery-plugin xfce4-clipman-plugin xfce4-genmon-plugin xfce4-notes-plugin xfce4-pulseaudio-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-screenshooter xfce4-settings xinit xorg xtools xz zenity zip whois torsocks
+	# XFCE4 packages
+	sudo xbps-install -Sy xfce4 xfce-polkit xfce4-battery-plugin xfce4-clipman-plugin xfce4-genmon-plugin xfce4-notes-plugin xfce4-pulseaudio-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-screenshooter xfce4-settings xinit xorg xtools xdg-utils xdotool adwaita-icon-theme
+  
+	# UI & Functionality
+	sudo xbps-install -Sy alsa-plugins alsa-plugins-32bit alsa-plugins-ffmpeg alsa-plugins-pulseaudio alsa-utils conky cpupower dbus-elogind elogind exo ffmpeg garcon gmic-gimp gnome-themes-extra greybird-themes gst-libav gst-plugins-bad1 gst-plugins-base1 gst-plugins-good1 gst-plugins-ugly1 gtk-update-icon-cache gtk3-nocsd gvfs gvfs-mtp lame libGL-32bit libavcodec libavcodec-32bit libavformat-32bit libavresample-32bit libavutil-32bit libpulseaudio-32bit libtxc_dxtn-32bit menulibre mugshot ntfs-3g ntp numlockx optipng parole pavucontrol physlock procps-ng pulseaudio rkhunter scrot simple-scan snooze tty-clock udisks2 ufw unrar unzip upower wmctrl x264 xarchiver xcalib xcursor-vanilla-dmz xcursor-vanilla-dmz-aa xdg-user-dirs-gtk xf86-input-wacom xz zenity
+	
+	# Fonts
+	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf 
+  
+	# Programs & Misc.
+	sudo xbps-install -Sy audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimpgimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
+	
+	# General graphics drivers
+	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit 
+
+	# AMD drivers
+	#sudo xbps-install -Sy linux-firmware-amd xf86-video-amdgpu mesa-ati-dri mesa-ati-dri-32bit mesa-vulkan-radeon	mesa-vulkan-radeon-32bit
+	
+	# Intel drivers
+	sudo xbps-install -Sy linux-firmware-intel xf86-video-intel mesa-intel-dri	mesa-intel-dri-32bit mesa-vulkan-intelmesa-vulkan-intel-32bit
+	
+	# Nvidia drivers
+	#sudo xbps-install -Sy linux-firmware-nvidia xf86-video-nouveau mesa-nouveau-dri mesa-nouveau-dri-32bit
+	
+	# Openbox
 	#sudo xbps-install -Sy openbox obconf obmenu nitrogen tint2 gsimplecal volumeicon compton
+	
+	# LightDM and screensavers
 	#sudo xbps-install -Sy light-locker lightdm lightdm-gtk-greeter-settings lightdm-gtk3-greeter xfce4-screensaver
+	
+	# Optional XFCE4 packages
 	#sudo xbps-install -Sy xfce4-panel-appmenu appmenu-gtk-module appmenu-gtk3-module plank
+	
+	# Powermanagement
 	#sudo xbps-install -Sy pm-utils
-	#sudo xbps-install -Sy linux-tools
+	
+	# Linux Headers
+	sudo xbps-install -Sy linux-headers linux-lts-headers
+  
+	# Build essentials
+	sudo xbps-install -Sy linux-tools gcc ctags make cmake rsync git lynx
+	
 	#sudo xbps-install -Sy cups cups-filters cups-pk-helper gutenprint system-config-printer
 	#sudo xbps-install -Sy octoxbps
 	#sudo xbps-install -Sy xiccd
@@ -41,12 +77,20 @@ sleep 3s
 	#sudo xbps-install -Sy vokoscreen pitivi
 	#sudo xbps-install -Sy gstreamer-vaapi
 	#sudo xbps-install -Sy sc-controller
-	#sudo xbps-install -Sy qemu virt-manager
+	
+	# Virtualization
+	sudo xbps-install -Sy qemu
+	sudo xbps-install -Sy virtualbox-ose virtualbox-dkms virtualbox-ose-guest virtualbox-ose-guest-dkms
+	
 	#sudo xbps-install -Sy socklog-void
 	#sudo xbps-install -Sy dconf-editor
 	#sudo xbps-install -Sy android-file-transfer-linux
 	#sudo xbps-install -Sy amdvlk amdvlk-32bit
-	#sudo xbps-install -Sy openjdk-jre minecraft
+	
+	# Java
+	sudo xbps-install -Sy openjdk-jre
+	
+	# DNSSEC
 	sudo xbps-install -Sy dnscrypt-proxy
 
 clear
