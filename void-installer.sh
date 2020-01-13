@@ -34,7 +34,7 @@ sleep 3s
 	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf 
   
 	# Programs & Misc.
-	sudo xbps-install -Sy audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimpgimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
+	sudo xbps-install -Sy fish rxvt-unicode audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimpgimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
 	
 	# General graphics drivers
 	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit 
@@ -103,7 +103,10 @@ sleep 3s
 	chmod +x void-files/usr/local/bin/void-scripts/*
 	chmod +x void-files/usr/local/bin/void-scripts/openbox-menu/*
 	chmod +x void-files/usr/local/bin/void-scripts/extra-themes/*
+  chown -R $USER void-files/user/config/*
+
 	\cp -r void-files/etc/skel/. ~/
+  \cp -r void-files/user/config/. ~/.config
 	sudo \cp -r void-files/etc/. /etc
 	sudo \cp -r void-files/usr/. /usr
 	rm -rf void-files/
@@ -161,6 +164,8 @@ sleep 3s
 	sudo ln -s /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
 	sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
+  sudo chsh -s /usr/bin/fish $USER
+
 clear
 echo "Adding user to some groups..."
 sleep 3s
@@ -170,6 +175,24 @@ sleep 3s
 	#sudo usermod -aG libvirt $USER
 	#sudo usermod -aG kvm $USER
 	#sudo usermod -aG socklog $USER
+
+clear
+echo "Importing dotfiles from server..."
+sleep 3s
+ 	cd /tmp/
+	wget https://gejr.dk/static/dotfiles.tar.xz
+	tar Jxvf dotfiles.tar.xz
+	chmod +x dotfiles/bin/*
+	
+	sudo \cp -r dotfiles/bin/. /bin/
+  rm -rf dotfiles/bin
+  
+	sudo \cp -r dotfiles/home/. ~/
+  rm -rf dotfiles/home
+
+  \cp -r dotfiles/* ~/.config
+	rm -rf dotfiles/
+	mv dotfiles.tar.xz ~/.void-backup/
 
 clear
 printf "If LightDM was installed, run \"sudo ln -s /etc/sv/lightdm /var/service/\" after reboot.\n"
