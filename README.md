@@ -3,7 +3,9 @@
 
 ---
 
-__NOTICE__: THIS SCRIPT IS DESIGNED AND WILL MOST LIKELY ONLY WORK FOR XFCE VARIANT
+__NOTICE__: THIS SCRIPT IS DESIGNED AND WILL MOST LIKELY ONLY WORK FOR THE MINIMAL ISO `void-live-x86_64-XXXXXXXX.iso`
+
+__NOTICE__: THIS SCRIPT HAS NOT BEEN TESTED ON THE MUSL VARIANT
 
 ### Usage
 Ready the system and install required packages
@@ -29,5 +31,5 @@ This will take some time.
 ---
 
 This repo was made possible by Alex from alkusin.net
-This repo use much of his work, but with an english translation and some improvements to some scripts and settings.
+This repo use much of his work, but with an English translation and some improvements to some scripts and settings.
 Check his site out for the original work https://alkusin.net/voidlinux/
