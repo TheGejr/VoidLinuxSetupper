@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-session" version="1.0">
+  <property name="general" type="empty">
+    <property name="FailsafeSessionName" type="empty"/>
+    <property name="SessionName" type="string" value="Default"/>
+    <property name="SaveOnExit" type="bool" value="false"/>
+  </property>
+  <property name="splash" type="empty">
+    <property name="Engine" type="string" value=""/>
+    <property name="engines" type="empty">
+      <property name="balou" type="empty">
+        <property name="Theme" type="string" value="Balou-Void"/>
+      </property>
+    </property>
+  </property>
+</channel>
