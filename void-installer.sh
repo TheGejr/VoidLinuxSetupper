@@ -34,7 +34,7 @@ sleep 3s
 	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf 
   
 	# Programs & Misc.
-	sudo xbps-install -Sy fish rxvt-unicode audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimpgimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
+	sudo xbps-install -Sy fish-shell audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
 	
 	# General graphics drivers
 	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit 
@@ -43,7 +43,7 @@ sleep 3s
 	#sudo xbps-install -Sy linux-firmware-amd xf86-video-amdgpu mesa-ati-dri mesa-ati-dri-32bit mesa-vulkan-radeon	mesa-vulkan-radeon-32bit
 	
 	# Intel drivers
-	sudo xbps-install -Sy linux-firmware-intel xf86-video-intel mesa-intel-dri	mesa-intel-dri-32bit mesa-vulkan-intelmesa-vulkan-intel-32bit
+	sudo xbps-install -Sy linux-firmware-intel xf86-video-intel mesa-intel-dri mesa-intel-dri-32bit mesa-vulkan-intel mesa-vulkan-intel-32bit
 	
 	# Nvidia drivers
 	#sudo xbps-install -Sy linux-firmware-nvidia xf86-video-nouveau mesa-nouveau-dri mesa-nouveau-dri-32bit
@@ -99,26 +99,27 @@ sleep 3s
  	cd /tmp/
 	wget https://gejr.dk/static/void-files.tar.xz
 	tar Jxvf void-files.tar.xz
+  sudo chown -r $USER void-files/
 	chmod +x void-files/usr/local/share/applications/*
 	chmod +x void-files/usr/local/bin/void-scripts/*
 	chmod +x void-files/usr/local/bin/void-scripts/openbox-menu/*
 	chmod +x void-files/usr/local/bin/void-scripts/extra-themes/*
-  chown -R $USER void-files/user/config/*
 
-	\cp -r void-files/etc/skel/. ~/
+  \cp -r void-files/etc/skel/. ~/
   \cp -r void-files/user/config/. ~/.config
 	sudo \cp -r void-files/etc/. /etc
 	sudo \cp -r void-files/usr/. /usr
 	rm -rf void-files/
 	mkdir ~/.void-backup/
 	mv void-files.tar.xz ~/.void-backup/
+  sudo chown -R $USER /usr/local/bin/void-scripts
 	sudo chmod 755 /etc/sv/void-updater/run
 
 clear
 echo "Installing new theme..."
 sleep 3s
-	/usr/local/bin/void-scripts/plata-custom-void.sh
-	/usr/local/bin/void-scripts/papirus-custom-void.sh
+	sudo /usr/local/bin/void-scripts/plata-custom-void.sh
+	sudo /usr/local/bin/void-scripts/papirus-custom-void.sh
 	sudo ln -sfnr /usr/share/icons/Papirus/64x64/apps/hardinfo.svg /usr/share/hardinfo/pixmaps/logo.png
 
 clear
@@ -183,11 +184,12 @@ sleep 3s
 	wget https://gejr.dk/static/dotfiles.tar.xz
 	tar Jxvf dotfiles.tar.xz
 	chmod +x dotfiles/bin/*
+  sudo chown -R $USER dotfiles/
 	
 	sudo \cp -r dotfiles/bin/. /bin/
   rm -rf dotfiles/bin
   
-	sudo \cp -r dotfiles/home/. ~/
+	\cp -r dotfiles/home/. ~/
   rm -rf dotfiles/home
 
   \cp -r dotfiles/* ~/.config
