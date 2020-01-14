@@ -99,20 +99,20 @@ sleep 3s
  	cd /tmp/
 	wget https://gejr.dk/static/void-files.tar.xz
 	tar Jxvf void-files.tar.xz
-  sudo chown -r $USER void-files/
+	sudo chown -r $USER void-files/
 	chmod +x void-files/usr/local/share/applications/*
 	chmod +x void-files/usr/local/bin/void-scripts/*
 	chmod +x void-files/usr/local/bin/void-scripts/openbox-menu/*
 	chmod +x void-files/usr/local/bin/void-scripts/extra-themes/*
-
-  \cp -r void-files/etc/skel/. ~/
-  \cp -r void-files/user/config/. ~/.config
+	
+	\cp -r void-files/etc/skel/. ~/
+	\cp -r void-files/user/config/. ~/.config
 	sudo \cp -r void-files/etc/. /etc
 	sudo \cp -r void-files/usr/. /usr
 	rm -rf void-files/
 	mkdir ~/.void-backup/
 	mv void-files.tar.xz ~/.void-backup/
-  sudo chown -R $USER /usr/local/bin/void-scripts
+	sudo chown -R $USER /usr/local/bin/void-scripts
 	sudo chmod 755 /etc/sv/void-updater/run
 
 clear
@@ -164,8 +164,8 @@ sleep 3s
 	sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
 	sudo ln -s /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
 	sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-  sudo chsh -s /usr/bin/fish $USER
+	
+	sudo chsh -s /usr/bin/fish $USER
 
 clear
 echo "Adding user to some groups..."
@@ -184,15 +184,15 @@ sleep 3s
 	wget https://gejr.dk/static/dotfiles.tar.xz
 	tar Jxvf dotfiles.tar.xz
 	chmod +x dotfiles/bin/*
-  sudo chown -R $USER dotfiles/
+	sudo chown -R $USER dotfiles/
 	
 	sudo \cp -r dotfiles/bin/. /bin/
-  rm -rf dotfiles/bin
+	rm -rf dotfiles/bin
   
 	\cp -r dotfiles/home/. ~/
-  rm -rf dotfiles/home
-
-  \cp -r dotfiles/* ~/.config
+	rm -rf dotfiles/home
+	
+	\cp -r dotfiles/* ~/.config
 	rm -rf dotfiles/
 	mv dotfiles.tar.xz ~/.void-backup/
 
