@@ -31,13 +31,13 @@ sleep 3s
 	sudo xbps-install -Sy alsa-plugins alsa-plugins-32bit alsa-plugins-ffmpeg alsa-plugins-pulseaudio alsa-utils conky cpupower dbus-elogind elogind exo ffmpeg garcon gmic-gimp gnome-themes-extra greybird-themes gst-libav gst-plugins-bad1 gst-plugins-base1 gst-plugins-good1 gst-plugins-ugly1 gtk-update-icon-cache gtk3-nocsd gvfs gvfs-mtp lame libGL-32bit libavcodec libavcodec-32bit libavformat-32bit libavresample-32bit libavutil-32bit libpulseaudio-32bit libtxc_dxtn-32bit menulibre mugshot ntfs-3g ntp numlockx optipng parole pavucontrol physlock procps-ng pulseaudio rkhunter scrot simple-scan snooze tty-clock udisks2 ufw unrar unzip upower wmctrl x264 xarchiver xcalib xcursor-vanilla-dmz xcursor-vanilla-dmz-aa xdg-user-dirs-gtk xf86-input-wacom xz zenity
 	
 	# Fonts
-	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf 
+	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
   
 	# Programs & Misc.
-	sudo xbps-install -Sy fish-shell audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
+	sudo xbps-install -Sy fish-shell audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk
 	
 	# General graphics drivers
-	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit 
+	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit
 
 	# AMD drivers
 	#sudo xbps-install -Sy linux-firmware-amd xf86-video-amdgpu mesa-ati-dri mesa-ati-dri-32bit mesa-vulkan-radeon	mesa-vulkan-radeon-32bit
@@ -80,7 +80,7 @@ sleep 3s
 	
 	# Virtualization
 	sudo xbps-install -Sy qemu
-	sudo xbps-install -Sy virtualbox-ose virtualbox-dkms virtualbox-ose-guest virtualbox-ose-guest-dkms
+	sudo xbps-install -Sy virtualbox-ose virtualbox-dkms virtualbox-ose-guest virtualbox-ose-guest-dkms # Error
 	
 	#sudo xbps-install -Sy socklog-void
 	#sudo xbps-install -Sy dconf-editor
@@ -99,7 +99,7 @@ sleep 3s
  	cd /tmp/
 	wget https://gejr.dk/static/void-files.tar.xz
 	tar Jxvf void-files.tar.xz
-	sudo chown -r $USER void-files/
+	sudo chown -R $USER void-files/
 	chmod +x void-files/usr/local/share/applications/*
 	chmod +x void-files/usr/local/bin/void-scripts/*
 	chmod +x void-files/usr/local/bin/void-scripts/openbox-menu/*
@@ -112,7 +112,7 @@ sleep 3s
 	rm -rf void-files/
 	mkdir ~/.void-backup/
 	mv void-files.tar.xz ~/.void-backup/
-	sudo chown -R $USER /usr/local/bin/void-scripts
+	sudo chmod -R 777 /usr/
 	sudo chmod 755 /etc/sv/void-updater/run
 
 clear
