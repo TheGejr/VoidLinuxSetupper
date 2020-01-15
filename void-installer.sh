@@ -14,12 +14,14 @@ bypass() {
 echo "Starting Void Linux post-install script..."
 sleep 3s
 	bypass
-	
+
+clear
 echo "Updating system and adding repositories..."
 sleep 3s
 	sudo xbps-install -Syu
 	sudo xbps-install -Sy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
+clear
 echo "Installing packages..."
 sleep 3s
 	# XFCE4 packages
@@ -98,6 +100,7 @@ sleep 3s
 	# DNSSEC
 	sudo xbps-install -Sy dnscrypt-proxy
 
+clear
 echo "Importing files from server..."
 sleep 3s
  	cd /tmp/
@@ -130,6 +133,7 @@ sleep 3s
 	sudo chmod 755 /usr/local/share/color/*
 	sudo chmod 755 /usr/local/share/applications/*
 
+clear
 echo "Installing new theme..."
 sleep 3s
 	. /usr/local/bin/void-scripts/plata-custom-void.sh
@@ -138,6 +142,7 @@ sleep 3s
 	sudo chmod -R 755 /usr/share/themes/*
 	sudo chmod -R 755 /usr/share/icons/*
 
+clear
 echo "Configuring system..."
 sleep 3s
 
@@ -182,6 +187,7 @@ sleep 3s
 
 	sudo chsh -s /usr/bin/fish $USER
 
+clear
 echo "Adding user to some groups..."
 sleep 3s
 	sudo usermod -aG input $USER
@@ -191,6 +197,7 @@ sleep 3s
 	#sudo usermod -aG kvm $USER
 	#sudo usermod -aG socklog $USER
 
+clear
 echo "Importing dotfiles from server..."
 sleep 3s
  	cd /tmp/
@@ -210,6 +217,7 @@ sleep 3s
 	rm -rf dotfiles/
 	mv dotfiles.tar.xz ~/.void-backup/
 
+clear
 printf "If LightDM was installed, run \"sudo ln -s /etc/sv/lightdm /var/service/\" after reboot.\n"
 read -p "Done! Press ENTER to reboot."
 	sudo shutdown -r now
