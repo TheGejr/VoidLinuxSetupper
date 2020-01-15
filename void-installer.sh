@@ -76,9 +76,16 @@ sleep 3s
 	#sudo xbps-install -Sy gstreamer-vaapi
 	#sudo xbps-install -Sy sc-controller
 	
-	# Virtualization
-	sudo xbps-install -Sy qemu
-	sudo xbps-install -Sy virtualbox-ose virtualbox-dkms virtualbox-ose-guest virtualbox-ose-guest-dkms
+	#### Virtualization
+	## Running Virtualbox in Void as host
+  sudo xbps-install -Sy virtualbox-ose virtualbox-ose-dkms
+  sudo modules-load
+
+  ## Running Void as guest on VirtualBox, you will need to uncomment following
+  #sudo xbps-install -Sy virtualbox-ose-guest virtualbox-ose-guest-dkms
+  #sudo ln -s /etc/sv/vboxservice /var/service/
+  #sudo depmod
+  #sudo VBoxClient --clipboard
 	
 	#sudo xbps-install -Sy socklog-void
 	#sudo xbps-install -Sy dconf-editor
@@ -129,6 +136,7 @@ sleep 3s
 	. /usr/local/bin/void-scripts/papirus-custom-void.sh
 	sudo ln -sfnr /usr/share/icons/Papirus/64x64/apps/hardinfo.svg /usr/share/hardinfo/pixmaps/logo.png
 	sudo chmod -R 755 /usr/share/themes/*
+	sudo chmod -R 755 /usr/share/icons/*
 
 echo "Configuring system..."
 sleep 3s
