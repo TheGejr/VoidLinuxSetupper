@@ -14,14 +14,12 @@ bypass() {
 echo "Starting Void Linux post-install script..."
 sleep 3s
 	bypass
-
-clear
+	
 echo "Updating system and adding repositories..."
 sleep 3s
 	sudo xbps-install -Syu
 	sudo xbps-install -Sy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
-clear
 echo "Installing packages..."
 sleep 3s
 	# XFCE4 packages
@@ -31,13 +29,13 @@ sleep 3s
 	sudo xbps-install -Sy alsa-plugins alsa-plugins-32bit alsa-plugins-ffmpeg alsa-plugins-pulseaudio alsa-utils conky cpupower dbus-elogind elogind exo ffmpeg garcon gmic-gimp gnome-themes-extra greybird-themes gst-libav gst-plugins-bad1 gst-plugins-base1 gst-plugins-good1 gst-plugins-ugly1 gtk-update-icon-cache gtk3-nocsd gvfs gvfs-mtp lame libGL-32bit libavcodec libavcodec-32bit libavformat-32bit libavresample-32bit libavutil-32bit libpulseaudio-32bit libtxc_dxtn-32bit menulibre mugshot ntfs-3g ntp numlockx optipng parole pavucontrol physlock procps-ng pulseaudio rkhunter scrot simple-scan snooze tty-clock udisks2 ufw unrar unzip upower wmctrl x264 xarchiver xcalib xcursor-vanilla-dmz xcursor-vanilla-dmz-aa xdg-user-dirs-gtk xf86-input-wacom xz zenity
 	
 	# Fonts
-	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
+	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf 
   
 	# Programs & Misc.
-	sudo xbps-install -Sy fish-shell audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk
+	sudo xbps-install -Sy fish-shell audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
 	
 	# General graphics drivers
-	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit
+	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit 
 
 	# AMD drivers
 	#sudo xbps-install -Sy linux-firmware-amd xf86-video-amdgpu mesa-ati-dri mesa-ati-dri-32bit mesa-vulkan-radeon	mesa-vulkan-radeon-32bit
@@ -80,7 +78,7 @@ sleep 3s
 	
 	# Virtualization
 	sudo xbps-install -Sy qemu
-	sudo xbps-install -Sy virtualbox-ose virtualbox-dkms virtualbox-ose-guest virtualbox-ose-guest-dkms # Error
+	sudo xbps-install -Sy virtualbox-ose virtualbox-dkms virtualbox-ose-guest virtualbox-ose-guest-dkms
 	
 	#sudo xbps-install -Sy socklog-void
 	#sudo xbps-install -Sy dconf-editor
@@ -93,36 +91,45 @@ sleep 3s
 	# DNSSEC
 	sudo xbps-install -Sy dnscrypt-proxy
 
-clear
 echo "Importing files from server..."
 sleep 3s
  	cd /tmp/
 	wget https://gejr.dk/static/void-files.tar.xz
 	tar Jxvf void-files.tar.xz
 	sudo chown -R $USER void-files/
-	chmod +x void-files/usr/local/share/applications/*
-	chmod +x void-files/usr/local/bin/void-scripts/*
-	chmod +x void-files/usr/local/bin/void-scripts/openbox-menu/*
-	chmod +x void-files/usr/local/bin/void-scripts/extra-themes/*
-	
-	\cp -r void-files/etc/skel/. ~/
-	\cp -r void-files/user/config/. ~/.config
-	sudo \cp -r void-files/etc/. /etc
-	sudo \cp -r void-files/usr/. /usr
+	chmod a+x void-files/usr/local/share/applications/*
+	chmod a+x void-files/usr/local/bin/void-scripts/*
+	chmod a+x void-files/usr/local/bin/void-scripts/openbox-menu/*
+	chmod a+x void-files/usr/local/bin/void-scripts/extra-themes/*
+  #chown -R $USER void-files/user/config/*
+
+	cp -r void-files/etc/skel/. ~/
+	cp -r void-files/user/config/. ~/.config
+	sudo cp -r void-files/etc/. /etc
+	sudo cp -r void-files/usr/. /usr
 	rm -rf void-files/
 	mkdir ~/.void-backup/
 	mv void-files.tar.xz ~/.void-backup/
-	sudo chmod -R 777 /usr/
+	sudo chown -R $USER /usr/local/bin/void-scripts/
+	sudo chown -R $USER /usr/local/share/applications/
+	sudo chmod 755 /usr/share/pixmaps/*.png
+	sudo chmod 755 /usr/share/pixmaps/*.svg
+	sudo chmod -R 755 /usr/share/themes/*
+	sudo chmod 644 /usr/share/xfce4/terminal/colorschemes/*
+	sudo chmod 644 /usr/share/gtksourceview-3.0/styles/*
+	sudo chmod -R 644 /usr/share/backgrounds/*.png
 	sudo chmod 755 /etc/sv/void-updater/run
+	sudo chmod 755 /usr/local/share/*
+	sudo chmod 755 /usr/local/share/color/*
+	sudo chmod 755 /usr/local/share/applications/*
 
-clear
 echo "Installing new theme..."
 sleep 3s
-	sudo /usr/local/bin/void-scripts/plata-custom-void.sh
-	sudo /usr/local/bin/void-scripts/papirus-custom-void.sh
+	. /usr/local/bin/void-scripts/plata-custom-void.sh
+	. /usr/local/bin/void-scripts/papirus-custom-void.sh
 	sudo ln -sfnr /usr/share/icons/Papirus/64x64/apps/hardinfo.svg /usr/share/hardinfo/pixmaps/logo.png
+	sudo chmod -R 755 /usr/share/themes/*
 
-clear
 echo "Configuring system..."
 sleep 3s
 
@@ -164,10 +171,9 @@ sleep 3s
 	sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
 	sudo ln -s /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
 	sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-	
+
 	sudo chsh -s /usr/bin/fish $USER
 
-clear
 echo "Adding user to some groups..."
 sleep 3s
 	sudo usermod -aG input $USER
@@ -177,26 +183,25 @@ sleep 3s
 	#sudo usermod -aG kvm $USER
 	#sudo usermod -aG socklog $USER
 
-clear
 echo "Importing dotfiles from server..."
 sleep 3s
  	cd /tmp/
 	wget https://gejr.dk/static/dotfiles.tar.xz
 	tar Jxvf dotfiles.tar.xz
-	chmod +x dotfiles/bin/*
 	sudo chown -R $USER dotfiles/
+	chmod a+x dotfiles/bin/*
 	
-	sudo \cp -r dotfiles/bin/. /bin/
+	sudo cp -r dotfiles/bin/. /bin/
+	sudo chmod 755 /bin/pathalias
 	rm -rf dotfiles/bin
   
-	\cp -r dotfiles/home/. ~/
+	cp -r dotfiles/home/. ~/
 	rm -rf dotfiles/home
-	
-	\cp -r dotfiles/* ~/.config
+
+	cp -r dotfiles/* ~/.config
 	rm -rf dotfiles/
 	mv dotfiles.tar.xz ~/.void-backup/
 
-clear
 printf "If LightDM was installed, run \"sudo ln -s /etc/sv/lightdm /var/service/\" after reboot.\n"
 read -p "Done! Press ENTER to reboot."
 	sudo shutdown -r now
