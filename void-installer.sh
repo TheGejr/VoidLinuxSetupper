@@ -34,7 +34,7 @@ sleep 3s
 	sudo xbps-install -Sy font-hack-ttf fontconfig fontconfig-32bit freetype google-fonts-ttf noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf 
   
 	# Programs & Misc.
-	sudo xbps-install -Sy fish-shell audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
+	sudo xbps-install -Sy bind-utils fish-shell audacity zip whois torsocks spigot bash-completion cpufrequtils gzip hardinfo epdfview filezilla firefox galculator-gtk3 gimp git pidgin htop hunspell libreoffice-calc libreoffice-writer libreoffice-gnome libreoffice nano vim neovim neofetch pfetch thunar-archive-plugin thunar-volman thunderbird transmission-gtk 
 	
 	# General graphics drivers
 	sudo xbps-install -Sy vkd3d vkd3d-32bit vulkan-loader vulkan-loader-32bit 
