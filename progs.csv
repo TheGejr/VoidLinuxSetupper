@@ -10,7 +10,7 @@ V,,essential,X,xdg-utils,"provides tools to assist applications with various des
 V,,progs,X,neovim,"a tidier vim with some useful features."
 V,,progs,,vim,"the classic vim editor."
 V,,progs,,nano,"the GNU nano text editor."
-D,,progs,X,https://github.com/brave/brave-browser/releases/download/v1.3.115/brave-browser_1.3.115_amd64.deb,"a next generation browser with ad-blocking, crypto and much more build into it.
+D,,progs,X,https://github.com/brave/brave-browser/releases/download/v1.3.115/brave-browser_1.3.115_amd64.deb,"a next generation browser with ad-blocking, crypto and much more build into it."
 V,,progs,X,firefox,"the classic Mozilla Firefox web browser."
 V,,progs,X,zip,"provides a way to create/update ZIP files compatible with pkzip."
 V,,progs,X,unzip,"provides a way to list, test and extract compressed files in a ZIP archive."
