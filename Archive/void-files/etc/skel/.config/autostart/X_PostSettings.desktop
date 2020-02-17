@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Name=X_PostSettings
-Exec=/usr/local/bin/void-scripts/xpostsettings.sh
-OnlyShowIn=XFCE;
-StartupNotify=false
-Terminal=false
-Hidden=false

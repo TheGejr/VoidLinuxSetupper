@@ -1,7 +1,0 @@
-[Scheme]
-Name=Plata-light
-ColorForeground=#000000000000
-ColorBackground=#ffffffffffff
-ColorCursor=#bdbdbdbdbdbd
-ColorPalette=rgb(33,33,33);rgb(244,67,54);rgb(76,175,80);rgb(255,193,7);rgb(33,150,243);rgb(156,39,176);rgb(0,188,212);rgb(224,224,224);rgb(158,158,158);rgb(229,115,115);rgb(129,199,132);rgb(255,213,79);rgb(100,181,246);rgb(186,104,200);rgb(77,208,225);rgb(245,245,245)
-TabActivityColor=#60607d7d8b8b

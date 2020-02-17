@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Void Wizard
-Comment=Helper for Void maintenance
-Exec=/usr/local/bin/void-scripts/void-wizard.sh
-Icon=void-wizard
-Terminal=true
-Categories=System;

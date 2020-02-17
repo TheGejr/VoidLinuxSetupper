@@ -1,8 +1,0 @@
-#!/usr/bin/fish
-set user (whoami)
-set base (basename $PWD)
-if test "$base" = "$user"
-  echo "~"
-else
-  echo $base
-end

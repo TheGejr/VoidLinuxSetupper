@@ -1,6 +1,0 @@
-Command=/usr/local/bin/void-scripts/genmonup-check.sh
-UseLabel=0
-Text=(genmon)
-UpdatePeriod=21600000
-Font=Ubuntu 11
-

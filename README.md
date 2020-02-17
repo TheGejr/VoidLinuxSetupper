@@ -1,16 +1,14 @@
-VoidLinuxSetupper
-=================
+Gejr's Automatic Void Bootstraping Enhanced Rice
+=================================================
 
+Or for short **GAVBER**
 Automate the process of setting up Void Linux.
-
-__NOTICE__: THIS SCRIPT IS DESIGNED FOR THE MINIMAL ISO `void-live-x86_64-XXXXXXXX.iso` BUT IT WILL WORK FOR ANY OTHER VERSION.
-
 
 Table of contents
 =================
 
 <!--ts-->
-  * [VoidLinuxSetupper](#voidlinuxsetupper)
+  * [GAVBER](#gejrs-automatic-void-bootstraping-enhanced-rice)
   * [Table of contents](#table-of-contents)
   * [Usage](#usage)
     * [Step 1](#step-1-install-voidlinux)

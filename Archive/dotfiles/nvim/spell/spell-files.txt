@@ -1,1 +1,0 @@
-Downloaded from : ftp://ftp.vim.org/pub/vim/runtime/spell/
